@@ -13,6 +13,14 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
     private final OrderService orderService;
 
+
+    // PEDIDOS PARA USUARIOS REGISTRADOS
+    // AL REGISTRARSE, CON SU USERNAME, NO HACE FALTA QUE LE PIDAS LOS DATOS,
+    // IRAS A BASE DE DATOS, CON ESE USERNAME Y RECOGERÁS LOS DATOS
+
+    // PEDIDOS PARA USUARIOS NO REGISTRADOS
+    // A ESTE LE PEDIRAS LOS DATOS EN EL FORMULARIO
+
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
@@ -27,9 +35,20 @@ public class OrderController {
         return ResponseEntity.ok(orderService.save(order));
     }
 
+    /**
+     *  SERVICIO DE PROCESO DE PAGO
+     *
+     *  DONDE EL USUARIO CONFIRME EL PEDIDO, SE GUARDE Y SE EMITA LA FACTURA.
+     *
+     *  SE GUARDE EN LA BASE DE DATOS DE ORDER LOS DETALLES DEL PEDIDO (ASOCIADO AL CLIENTE)
+     *  SE GUARDE EN LA BASE DE DATOS DE BILL DE LA FACTURA
+     *  SE ENVIE AL USUARIO A SU EMAIL LOS DETALLES DEL PEDIDO Y FACTURA
+     *
+     */
+
     @PostMapping("/update/state/order")
-    public ResponseEntity updateStateById(@RequestParam Integer id, @RequestParam String state){
-        orderService.updateStateById(id, state);
+    public ResponseEntity<?> updateStateById(@RequestParam String dni, @RequestParam String state){
+        orderService.updateStateById(dni, state);
         return ResponseEntity.ok().build();
     }
 
@@ -38,15 +57,15 @@ public class OrderController {
         return  ResponseEntity.ok(orderService.findAll());
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<Order> findById(@PathVariable Integer id){
-        return ResponseEntity.ok(orderService.findById(id));
+    @GetMapping("{dni}")
+    public ResponseEntity<Order> findById(@PathVariable String dni){
+        return ResponseEntity.ok(orderService.findById(dni));
 
     }
 
-    @GetMapping("/by-user/{id}")
-    public ResponseEntity<Iterable<Order>> findByUserId(@PathVariable("id") Integer userId){
-        return  ResponseEntity.ok(orderService.findByUserId(userId));
+    @GetMapping("/by-user/{dni}")
+    public ResponseEntity<Iterable<Order>> findByUserId(@PathVariable("dni") String dni){
+        return  ResponseEntity.ok(orderService.findByUserId(dni));
 
     }
 }

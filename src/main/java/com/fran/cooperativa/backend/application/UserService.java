@@ -1,6 +1,7 @@
 package com.fran.cooperativa.backend.application;
 
 import com.fran.cooperativa.backend.domain.model.User;
+import com.fran.cooperativa.backend.domain.model.UserNoRegister;
 import com.fran.cooperativa.backend.domain.port.IUserRepository;
 
 public class UserService {
@@ -10,12 +11,16 @@ public class UserService {
         this.iUserRepository = iUserRepository;
     }
 
-    public User save (User user){
+    public User save(User user) {
         return iUserRepository.save(user);
     }
 
-    public User findById (Integer id){
-        return this.iUserRepository.findById(id);
+    public UserNoRegister saveNoRegisterUser(UserNoRegister userNoRegister) {
+        return iUserRepository.saveUserNoRegister(userNoRegister);
+    }
+
+    public User findByDNI(String dni) {
+        return this.iUserRepository.findByDNI(dni);
     }
 
 

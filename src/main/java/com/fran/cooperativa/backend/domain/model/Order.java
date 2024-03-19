@@ -11,14 +11,13 @@ import java.util.List;
 
 @Data //nos hace los getter y setter
 @AllArgsConstructor //hace constructor
-
 public class Order {
 
-    private Integer id;
+    private Integer orderId;
     private LocalDateTime dateCreated;
     private List<OrderProduct> orderProduct;
     private OrderState orderState;
-    private Integer userId;
+    private String dni;
 
     public Order() {
         orderProduct= new ArrayList<>();

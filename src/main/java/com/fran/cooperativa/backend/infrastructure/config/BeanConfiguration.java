@@ -1,13 +1,7 @@
 package com.fran.cooperativa.backend.infrastructure.config;
 
-import com.fran.cooperativa.backend.application.CategoryService;
-import com.fran.cooperativa.backend.application.OrderService;
-import com.fran.cooperativa.backend.application.ProductService;
-import com.fran.cooperativa.backend.application.UserService;
-import com.fran.cooperativa.backend.domain.port.ICategoryRepository;
-import com.fran.cooperativa.backend.domain.port.IOrderRepository;
-import com.fran.cooperativa.backend.domain.port.IProductRepository;
-import com.fran.cooperativa.backend.domain.port.IUserRepository;
+import com.fran.cooperativa.backend.application.*;
+import com.fran.cooperativa.backend.domain.port.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -33,6 +27,11 @@ public class BeanConfiguration {
     public OrderService orderService(IOrderRepository iOrderRepository){
 
         return new OrderService(iOrderRepository);
+    }
+
+    @Bean
+    public InvoiceService invoiceService(IInvoiceRepository iInvoiceRepository) {
+        return new InvoiceService(iInvoiceRepository);
     }
 
 }

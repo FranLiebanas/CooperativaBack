@@ -8,22 +8,14 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserNoRegister {
 
     @Pattern(regexp = "[0-9]{8}[A-Za-z]", message = "El DNI debe tener 8 dígitos seguidos de una letra")
     private String dni;
-
-    @NotBlank(message = "El nombre de usuario es obligatorio")
-    private String username;
-
-    @NotBlank(message = "La contraseña es obligatoria")
-    @Size(min = 6, message = "La contraseña debe tener al menos 6 caracteres")
-    private String password;
 
     @NotBlank(message = "El nombre es obligatorio")
     private String firstName;
@@ -37,13 +29,19 @@ public class User {
     @Pattern(regexp = "\\d{9}", message = "El número de teléfono debe tener 9 dígitos")
     private String cellPhone;
 
-    private UserType userType;
+    private final UserType userType = UserType.USER;
 
+    @NotBlank(message = "El nombre de la calle es obligatorio")
     private String street;
+    @NotBlank(message = "El numero del domicilio es obligatorio")
     private Integer number;
+
     private String floor;
+    @NotBlank(message = "El codigo postal es obligatorio")
     private String postalCode;
+    @NotBlank(message = "La ciudad es obligatorio")
     private String city;
+    @NotBlank(message = "La provincia es obligatorio")
     private String province;
     private JsonNode shoppingCart;
 }

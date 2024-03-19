@@ -28,9 +28,9 @@ public class OrderCrudRepositoryImpl implements IOrderRepository {
     }
 
     @Override
-    public Order findById(Integer id) {
-        return orderMapper.toOrder(iOrderCrudRepository.findById(id).orElseThrow(
-                ()-> new RuntimeException("La Orden con id: "+ id+" no  se ha encontrado")
+    public Order findByDNI(String dni) {
+        return orderMapper.toOrder(iOrderCrudRepository.findByUserDni(dni).orElseThrow(
+                () -> new RuntimeException("El pedido del usuario con DNI: " + dni + " no se ha encontrado")
         ));
     }
 
@@ -40,18 +40,27 @@ public class OrderCrudRepositoryImpl implements IOrderRepository {
     }
 
     @Override
-    public Iterable<Order> findbyUserId(Integer userId) {
-        UserEntity userEntity= new UserEntity();
-        userEntity.setId(userId);
-        return orderMapper.toOrderList(iOrderCrudRepository.findByUserEntity(userEntity));
+    public Iterable<Order> findByUserDNI(String dni) {
+        return orderMapper.toOrderList(iOrderCrudRepository.findAllByUserDni(dni));
     }
 
     @Override
-    public void updateStateById(Integer id, String state) {
-     if (state.equals(OrderState.CANCELLED)){
-         iOrderCrudRepository.updateStateById(id, OrderState.CANCELLED);
-     }else {
-         iOrderCrudRepository.updateStateById(id,OrderState.CONFIRMED);
-     }
+    public void updateStateByDNI(String dni, String state) {
+        // Convierte el estado proporcionado como String a un valor del enum OrderState
+        OrderState orderState = null;
+        try {
+            orderState = OrderState.valueOf(state);
+        } catch (IllegalArgumentException e) {
+            // Manejar caso en el que el estado proporcionado no es válido
+            System.out.println("Estado no válido: " + state);
+            return;
+        }
+
+        // Verifica si el estado es CANCELLED, si es así, establece el estado a CANCELLED, de lo contrario, establece CONFIRMED
+        if (orderState == OrderState.CANCELLED) {
+            iOrderCrudRepository.updateStateById(dni, OrderState.CANCELLED);
+        } else {
+            iOrderCrudRepository.updateStateById(dni, OrderState.CONFIRMED);
+        }
     }
 }

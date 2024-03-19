@@ -20,6 +20,5 @@ public class Product {
     private Integer stock_max;
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
-    private Integer userId;
     private Integer categoryId;
 }

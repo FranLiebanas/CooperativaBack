@@ -2,6 +2,7 @@ package com.fran.cooperativa.backend.infrastructure.rest;
 
 import com.fran.cooperativa.backend.application.UserService;
 import com.fran.cooperativa.backend.domain.model.User;
+import com.fran.cooperativa.backend.domain.model.UserNoRegister;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,14 +14,19 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
+    @PostMapping("/unregistered")
+    public UserNoRegister saveUserNotRegister(@RequestBody UserNoRegister userNoRegister){
+        return userService.saveNoRegisterUser(userNoRegister);
+    }
     @PostMapping
     public User save(@RequestBody User user){
         return userService.save(user);
     }
-    @GetMapping("/{id}")
-    public User findById(@PathVariable Integer id){
+    @GetMapping("/{dni}")
+    public User findByDNI(@PathVariable String dni){
 
-        return userService.findById(id);
+        return userService.findByDNI(dni);
     }
 
 

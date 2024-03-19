@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor //hace constructor
 @NoArgsConstructor //contructor vacio
 public class OrderProduct {
-    private Integer id;
+    private Integer orderId;
     private BigDecimal quantity;
     private BigDecimal price;
     private Integer productID;

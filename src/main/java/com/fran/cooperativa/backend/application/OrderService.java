@@ -21,17 +21,17 @@ public class OrderService {
         return this.iOrderRepository.findAll();
     }
 
-  public Iterable<Order> findByUserId(Integer userId){
-        return this.iOrderRepository.findbyUserId(userId);
+  public Iterable<Order> findByUserId(String dni){
+        return this.iOrderRepository.findByUserDNI(dni);
   }
 
-  public void updateStateById(Integer id, String state){
-        this.iOrderRepository.updateStateById(id,state);
+  public void updateStateById(String dni, String state){
+        this.iOrderRepository.updateStateByDNI(dni,state);
   }
 
-  public Order findById( Integer id){
+  public Order findById(String dni){
 
-        return this.iOrderRepository.findById(id);
+        return this.iOrderRepository.findByDNI(dni);
   }
 
 }

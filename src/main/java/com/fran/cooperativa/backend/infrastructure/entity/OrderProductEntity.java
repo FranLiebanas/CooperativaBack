@@ -10,11 +10,15 @@ import java.math.BigDecimal;
 public class OrderProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id; // Cambiado de orderId a id
+
     private BigDecimal quantity;
     private BigDecimal price;
-    private Integer productID;
 
     @ManyToOne
+    @JoinColumn(name = "order_id")
     private OrderEntity orderEntity;
+
+    @Column(name = "product_id") // Nombre de la columna en la tabla de la base de datos
+    private Integer productId; // Cambiado de orderId a productId
 }

@@ -32,8 +32,6 @@ public class ProductEntity {
     private LocalDateTime dateUpdated;
 
     @ManyToOne
-    private UserEntity userEntity;
-    @ManyToOne
     private  CategoryEntity categoryEntity;
 
 }
