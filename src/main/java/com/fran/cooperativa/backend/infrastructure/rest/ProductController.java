@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/admin/products")
 @Slf4j
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProductController {
 
     private final ProductService productService;
