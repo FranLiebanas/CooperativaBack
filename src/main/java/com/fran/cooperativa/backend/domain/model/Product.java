@@ -16,9 +16,12 @@ public class Product {
     private String description;
     private String urlImage;
     private BigDecimal price;
+    private Integer stock;
     private Integer stock_min;
     private Integer stock_max;
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
     private Integer categoryId;
+
+
 }
