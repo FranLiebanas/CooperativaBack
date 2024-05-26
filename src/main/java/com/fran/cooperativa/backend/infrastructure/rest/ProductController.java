@@ -37,8 +37,8 @@ public class ProductController {
                                         @RequestParam("dateCreated") String dateCreated,
                                         @RequestParam("dateUpdated") String dateUpdated,
                                         @RequestParam("categoryId") Integer categoryId,
-                                        @RequestParam(value = "image", required = false)MultipartFile multipartFile)
-                                        throws IOException {
+                                        @RequestParam(value = "image", required = false) MultipartFile multipartFile)
+            throws IOException {
         Product product = new Product();
         product.setId(id);
         product.setCode(code);
@@ -50,7 +50,6 @@ public class ProductController {
         product.setStock_min(stockMin);
         product.setStock_max(stockMax);
 
-        // Usar un patrón más común para fechas en formato ISO
         DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
         try {
@@ -63,20 +62,23 @@ public class ProductController {
         product.setCategoryId(categoryId);
 
         log.info("Nombre producto: {}", product.getName());
+
+        // Pass both product and multipartFile to the save method
         return new ResponseEntity<>(productService.save(product, multipartFile), HttpStatus.CREATED);
     }
+
     @GetMapping
-    public ResponseEntity<Iterable<Product>> findAll(){
+    public ResponseEntity<Iterable<Product>> findAll() {
         return ResponseEntity.ok(productService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> findById(@PathVariable Integer id){
+    public ResponseEntity<Product> findById(@PathVariable Integer id) {
         return ResponseEntity.ok(productService.findById(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteById(@PathVariable Integer id){
+    public ResponseEntity<HttpStatus> deleteById(@PathVariable Integer id) {
         productService.deleteById(id);
         return ResponseEntity.ok().build();
     }
