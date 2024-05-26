@@ -18,8 +18,8 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public ProductService productService(IProductRepository iProductRepository){
-        return new ProductService(iProductRepository);
+    public ProductService productService(IProductRepository iProductRepository, UploadFile uploadFile){
+        return new ProductService(iProductRepository, uploadFile);
     }
 
 
@@ -32,6 +32,11 @@ public class BeanConfiguration {
     @Bean
     public InvoiceService invoiceService(IInvoiceRepository iInvoiceRepository) {
         return new InvoiceService(iInvoiceRepository);
+    }
+
+    @Bean
+    public UploadFile uploadFile(){
+        return new UploadFile();
     }
 
 }
