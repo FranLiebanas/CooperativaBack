@@ -6,6 +6,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ProductService {
 
     private final IProductRepository iProductRepository;
@@ -20,15 +23,18 @@ public class ProductService {
     public Product save(Product product, MultipartFile multipartFile) throws IOException {
         if (product.getId() != 0) { // When modifying an existing product
             if (multipartFile != null) {
+                product.setUrlImage(product.getUrlImage());
+            }else{
+                String nameFile = product.getUrlImage().substring(29);
+                log.info("este es el nombre de la imagen: {}", nameFile);
+                if (!nameFile.equals("default.jpg")){
+                    uploadFile.delete(nameFile);
+                }
                 product.setUrlImage(uploadFile.upload(multipartFile));
             }
-        } else { // When creating a new product
-            if (multipartFile != null) {
-                product.setUrlImage(uploadFile.upload(multipartFile));
-            } else {
-                // Set a default image URL if multipartFile is null for a new product
-                product.setUrlImage(defaultImageUrl);
-            }
+
+        }else{
+            product.setUrlImage(uploadFile.upload(multipartFile));
         }
         return this.iProductRepository.save(product);
     }
@@ -42,6 +48,12 @@ public class ProductService {
     }
 
     public void deleteById(Integer id) {
-        iProductRepository.deleteById(id);
+        Product product = findById(id);
+        String nameFile = product.getUrlImage().substring(29);
+        log.info("este es el nombre de la imagen: {}", nameFile);
+        if (!nameFile.equals("default.jpg")){
+            uploadFile.delete(nameFile);
+        }
+        this.iProductRepository.deleteById(id);
     }
 }
