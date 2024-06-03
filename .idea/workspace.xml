@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="23566ad5-65b4-48bb-8d70-d365ced62a65" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/BackendApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/application/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/application/InvoiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/application/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/application/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/application/UploadFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/application/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/Invoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/OrderProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/OrderState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/UserNoRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/model/UserType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/port/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/port/IInvoiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/port/IOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/port/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/port/IUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/domain/request/CreateInvoiceRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/CategoryCrudRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/ICategoryCrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/IInvoiceCrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/IOrderCrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/IProductCrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/IUserCrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/InvoiceCrudRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/OrderCrudRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/ProductCrudRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/adapter/UserCrudRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/config/BeanConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/converter/JsonNodeConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/entity/CategoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/entity/InvoiceEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/entity/OrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/entity/OrderProductEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/entity/ProductEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/exception/InvoiceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/mapper/InvoiceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/mapper/OrderProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/rest/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/rest/InvoiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/rest/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/rest/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/java/com/fran/cooperativa/backend/infrastructure/rest/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/application-pdn.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/static/images/AceiteCoco.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/static/images/AceiteDeOlivaSuave.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/static/images/AceitedeGirasolAltoOleico.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/static/images/AceitedeOlivaVirgenExtra.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/static/images/AceitedeOlivaVirgenExtraEcologico.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/static/images/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CooperativaBack-master/src/main/resources/static/images/frantoio.jpeg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2hLm0qTQ0v6pecWn1SlaPEz0Xxq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/xampp/JavaSpring/CooperativaBack-master2/CooperativaBack-master"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23566ad5-65b4-48bb-8d70-d365ced62a65" name="Changes" comment="" />
+      <created>1717381515981</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717381515981</updated>
+    </task>
+    <servers />
+  </component>
+</project>
